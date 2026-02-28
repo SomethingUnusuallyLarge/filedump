@@ -1831,11 +1831,6 @@ function handlespecials(value, indentation)
 		end
 		i = i + 1
 		char = string.sub(value, i, i)
-		if i % 200 == 0 then
-			indentStr = indentStr or string.rep(" ", indentation + indent)
-			table.move({ '"\n', indentStr, '... "' }, 1, 3, i, buildStr)
-			i += 3
-		end
 	end
 	return table.concat(buildStr)
 end
