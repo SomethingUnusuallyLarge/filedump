@@ -974,7 +974,7 @@ end
 function newRemote(type, data)
     if layoutOrderNum < 1 then layoutOrderNum = 999999999 end
     local remote = data.remote
-    if remote.Name == "Camera" then return end
+    if remote.Name == "Camera" or remote.Name == "Activated" then return end
     local callingscript = data.callingscript
 
     local RemoteTemplate = Create("Frame",{LayoutOrder = layoutOrderNum,Name = "RemoteTemplate",Parent = LogList,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,Size = UDim2.new(0, 117, 0, 27)})
@@ -2375,3 +2375,4 @@ if table.find({
         QuickCapture.TextColor3 = Background.Visible and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(252, 51, 51)
     end)
 end
+
